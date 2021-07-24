@@ -1,3 +1,9 @@
+/*
+Given an integer array(arr) of size n. Where n is equal to [2m + 1].
+Now, in the given array, 'm' numbers are present twice and one number is present only once.
+You need to find and return that number which is unique in the array.
+*/
+
 #include <iostream>
 using namespace std;
 
