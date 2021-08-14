@@ -3,7 +3,7 @@ using namespace std;
 
 void MoveBack1(char arr[])
 {
-    if (arr[0] == 0)
+    if (arr[0] == '\0')
     {
         return;
     }
