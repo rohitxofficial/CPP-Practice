@@ -1,45 +1,47 @@
 #include <iostream>
 using namespace std;
 
-bool CheckAB(string s)
+bool checkAB(string s)
 {
-    if (s.empty())
+    if (s.length() == 0)
     {
         return true;
     }
 
     if (s[0] == 'a')
     {
-        if (s[1] == 'a')
+        if (s.substr(1, 2) == "bb")
         {
-            return CheckAB(s.substr(1));
+            return checkAB(s.substr(1));
         }
-        else if (s.substr(1, 2) == "bb")
+        else if (s[1] == 'a')
         {
-            return CheckAB(s.substr(1));
+            return checkAB(s.substr(1));
+        }
+        else if (s.substr(1).empty())
+        {
+            return true;
         }
         else
         {
             return false;
         }
     }
-
     else if (s.substr(0, 2) == "bb")
     {
-        if (s.substr(2).empty())
+        if (s[2] == 'a')
         {
-            return CheckAB(s.substr(2));
+            return checkAB(s.substr(2));
         }
-        else if (s[2] == 'a')
+        else if (s.substr(2).empty())
         {
-            return CheckAB(s.substr(2));
+            return true;
         }
         else
         {
             return false;
         }
     }
-
     else
     {
         return false;
@@ -53,12 +55,13 @@ int main()
 
     if (s[0] == 'a')
     {
-        cout << CheckAB(s) << endl;
+        if (checkAB(s))
+            cout << "true" << endl;
+        else
+            cout << "false" << endl;
     }
     else
-    {
-        cout << false << endl;
-    }
+        cout << "false" << endl;
 
     return 0;
 }
