@@ -1,20 +1,22 @@
 #include <iostream>
 using namespace std;
 
-int output = 0;
-
-void Staircase(int n)
+int Staircase(int n)
 {
     if (n == 0)
     {
-        output++;
-        return;
+        return 1;
     }
+
+    int ans = 0;
+
     for (int i = 1; i <= 3; i++)
     {
         if (n - i >= 0)
-            Staircase(n - i);
+            ans += Staircase(n - i);
     }
+
+    return ans;
 }
 
 int main()
@@ -22,9 +24,7 @@ int main()
     int n;
     cin >> n;
 
-    Staircase(n);
-
-    cout << output << endl;
+    cout << Staircase(n) << endl;
 
     return 0;
 }
