@@ -87,11 +87,7 @@ int main()
         cin >> inOrder[i];
     }
 
-    cout << "Done" << endl;
-
     BinaryTreeNode<int> *root = construct(preOrder, inOrder, 0, n - 1, 0, n - 1);
-
-    cout << "Done 2" << endl;
 
     printBinaryTree(root);
 
