@@ -53,41 +53,27 @@ void printBinaryTree(BinaryTreeNode<int> *root)
 
     queue<BinaryTreeNode<int> *> q;
     q.push(root);
-
-    int level = 0;
-    int levelElements = pow(2, level);
-
+    q.push(NULL);
     while (!q.empty())
     {
         BinaryTreeNode<int> *front = q.front();
         q.pop();
 
-        if (front != NULL)
+        if (front == NULL)
         {
-
-            cout << front->data << " ";
-            levelElements--;
-
-            if (levelElements == 0)
-            {
-                cout << endl;
-                level++;
-                levelElements = pow(2, level);
-            }
-
-            q.push(front->left);
-            q.push(front->right);
+            cout << endl;
+            if (!q.empty())
+                q.push(NULL);
         }
         else
         {
-            levelElements--;
+            cout << front->data << " ";
 
-            if (levelElements == 0)
-            {
-                cout << endl;
-                level++;
-                levelElements = pow(2, level);
-            }
+            if (front->left != NULL)
+                q.push(front->left);
+
+            if (front->right != NULL)
+                q.push(front->right);
         }
     }
 }
