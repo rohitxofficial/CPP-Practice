@@ -23,10 +23,6 @@ int main()
             myMap[arr[i]] = true;
             ans.push_back(arr[i]);
         }
-        else
-        {
-            continue;
-        }
     }
 
     for (int i = 0; i < ans.size(); i++)
