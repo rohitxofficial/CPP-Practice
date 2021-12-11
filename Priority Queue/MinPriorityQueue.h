@@ -78,7 +78,7 @@ public:
         {
             if (child2 >= pq.size())
             {
-                if (pq[parentIndex] < pq[child1])
+                if (pq[parentIndex] > pq[child1])
                 {
                     int temp = pq[parentIndex];
                     pq[parentIndex] = pq[child1];
