@@ -83,13 +83,8 @@ public:
                     int temp = pq[parentIndex];
                     pq[parentIndex] = pq[child1];
                     pq[child1] = temp;
-
-                    parentIndex = child1;
-                    child1 = 2 * parentIndex + 1;
-                    child2 = 2 * parentIndex + 2;
-
-                    break;
                 }
+                break;
             }
             else if (pq[parentIndex] < pq[child1] && pq[parentIndex] < pq[child2])
             {
