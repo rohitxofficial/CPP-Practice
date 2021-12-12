@@ -72,12 +72,14 @@ public:
         int child2 = 2 * parentIndex + 2;
         while (child1 < pq.size())
         {
-            if (child2 >= pq.size() && pq[parentIndex] < pq[child1])
+            if (child2 >= pq.size())
             {
+                if (pq[parentIndex] < pq[child1])
+                {
                 int temp2 = pq[parentIndex];
                 pq[parentIndex] = pq[child1];
                 pq[child1] = temp2;
-
+                }
                 break;
             }
             else if (pq[parentIndex] > pq[child1] && pq[parentIndex] > pq[child2])
